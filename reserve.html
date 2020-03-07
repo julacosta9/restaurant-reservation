@@ -56,14 +56,34 @@
             <br>
             <button class="pure-button pure-button-primary button-large" id='subBtn'>Submit</button>
         </div>
-        <hr>
-        <body>
-                API Table Link | API Wait List
-                
-                
-                </body>
+        <br>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src='script.js'></script>
 </body>
+<script>
+    $("#subBtn").on("click", function (event) {
+      event.preventDefault();
+      console.log("hello");
+      var newTable = {
+        name: $("#name").val().trim(),
+        phone: $("#phoneNum").val().trim(),
+        email: $("#email").val().trim(),
+        id: $("#uniqueID").val().trim()
+      };
+      $.post("/reserve",newTable)
+        .then(function (data) {
+          alert("Reserving Table");
+          console.log(data);
+          if(data.table === true){
+              alert("your table is reserved");
+            }
+          else{
+            alert("youre on wait list");
+          }    
+        });
+
+    });
+  </script>
+</script>
 
 </html>
