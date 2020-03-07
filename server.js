@@ -4,7 +4,7 @@ const path = require('path');
 const Customer = require('./customer')
 // Set express app
 const app = express();
-const PORT = 3000;
+const PORT = 3002;
 
 // Set express to handle data parsing
 app.use(express.urlencoded({ extended: true }));

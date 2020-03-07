@@ -50,13 +50,29 @@
         <script src='script.js'></script>
 </body>
 <script>
-    app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "home.html"));
-    });
+    $("#subBtn").on("click", function (event) {
+      event.preventDefault();
+      console.log("hello");
+      var newTable = {
+        name: $("#name").val().trim(),
+        phone: $("#phoneNum").val().trim(),
+        email: $("#email").val().trim(),
+        id: $("#uniqueID").val().trim()
+      };
+      $.post("/reserve",newTable)
+        .then(function (data) {
+          alert("Reserving Table");
+          console.log(data);
+          if(data.table === true){
+              alert("your table is reserved");
+            }
+          else{
+            alert("youre on wait list");
+          }    
+        });
 
-    app.get("/tables", function (req, res) {
-        res.sendFile(path.join(__dirname, "tables.html"));
     });
+  </script>
 </script>
 
 </html>
