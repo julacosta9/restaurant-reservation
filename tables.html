@@ -12,79 +12,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
-    <div class="cards">
-        <div class="tile is-ancestor">
+        <div class="cards">
+            <div class="tile is-ancestor">
                 <div class="tile is-parent" id="script1">
-                  <article class="tile is-child box background">
-                    <p>
-<div class="columns">
-<div class="column">
-            <div class="container">
-                        <h1 class="title">
-                            Hot Restaurant</h1>
-                            <hr>
-
-                        <h2 class="subtitle">
-                            <strong>Current Reservations and Waiting List</strong>
-                        </h2>
-                        <br>
-                        <button class="button is-danger" id='homeBtn' >Make Reservation</button>
-                        <button class="button is-info" id='homeBtn' >Home</button>
-                    </div>
+                    <article class="tile is-child box background">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="container">
+                                    <h1 class="title">
+                                        Hot Restaurant</h1>
+                                    <br>
+                                    <h2 class="subtitle">
+                                        <strong>Current Reservations and Waiting List</strong>
+                                    </h2>
+                                    <hr>
+                                    <button class="button is-danger" id='homeBtn'>Make Reservation</button>
+                                    <button class="button is-info" id='homeBtn'>Home</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
-    </div>
-
-</div>
-<br>
-
-<div class="cards currentreservations">
-        <div class="tile is-ancestor">
+        <br>
+        <div class="cards currentreservations">
+            <div class="tile is-ancestor">
                 <div class="tile is-parent" id="script1">
-                  <article class="tile is-child box background2">
-                    <div class=titletext>   
-                    <h1><strong>Reservation List</strong></h1>
-                </div>
-                        <hr>   
-</div>
-</div>
-</div>
-
-<br>
-
-<div class="cards currentreservations">
-        <div class="tile is-ancestor">
-                <div class="tile is-parent" id="script1">
-                  <article class="tile is-child box background2">
-                        <div class=titletext>   
-                    <h1><strong>Waiting List</strong></h1>
+                    <article class="tile is-child box background2">
+                        <div class=titletext>
+                            <h1><strong>Reservation List</strong></h1>
                         </div>
                         <hr>
+                        <div id="reservationlist">
+                            INSERT HERE
+                        </div>
+
                     </article>
-                    
-                  
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="cards currentreservations">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent" id="script1">
+                    <article class="tile is-child box background2">
+                        <div class=titletext>
+                            <h1><strong>Waiting List</strong></h1>
+                        </div>
+                        <hr>
+                        <div id=waitinglist>
+                            INSERT HERE
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
 
 
-<div class="link">
+        <div class="link">
 
 
-        <hr>
-        <body>
-            Control Panel
-            <br>
-            Clear Table | API Table Link | API Wait List
-                
-                
-                </body>
+            <hr>
+
+            <body>
+                Control Panel
+                <br>
+                Clear Table | API Table Link | API Wait List
+
+
+            </body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src='script.js'></script>
+        <script src='script.js'>
+
+            const table = 
+            `<div id="table${counter}">
+                <p>${name}, ${id}</p>
+            </div>`
+
+        </script>
 </body>
 
 </html>
