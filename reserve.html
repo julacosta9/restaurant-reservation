@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="columns">
@@ -48,5 +49,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src='script.js'></script>
 </body>
+<script>
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "home.html"));
+    });
+
+    app.get("/tables", function (req, res) {
+        res.sendFile(path.join(__dirname, "tables.html"));
+    });
+</script>
 
 </html>
