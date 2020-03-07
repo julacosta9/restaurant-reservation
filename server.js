@@ -1,7 +1,7 @@
 // Dependencies
 const express = require('express');
 const path = require('path');
-const customer = require('./customer')
+const Customer = require('./customer')
 // Set express app
 const app = express();
 const PORT = 3000;
@@ -36,7 +36,22 @@ const reservations = [];
 
 const waitList = []
 
-
+app.post("/reserve", function(req, res) {
+    const newCustomer = req.body
+    console.log(req.body)
+    if (reservations.length >= 5) {
+        const customer = new Customer(newCustomer.name, newCustomer.phone, newCustomer.email, newCustomer.id, false);
+        waitList.push(customer);
+        res.status(200).send(customer);
+        
+    } else {
+        const customer = new Customer(newCustomer.name, newCustomer.phone, newCustomer.email, newCustomer.id, true);
+        reservations.push(customer);
+        res.status(200).send(customer);
+    } 
+    res.json(reservations);
+    
+});
 
 // Turning on server
 app.listen(PORT, () => {
